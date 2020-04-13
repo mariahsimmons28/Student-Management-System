@@ -12,6 +12,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import java.util.*; 
 
 public class Textbox implements ActionListener {
 	private static JLabel introName;
@@ -26,9 +27,16 @@ public class Textbox implements ActionListener {
 	private static JTextField txtName3;
 	private static JButton button;
 	
+	//create arraylists to hold names 
+	ArrayList <String> fname = new ArrayList();
+	ArrayList <String> lname = new ArrayList();
+       ArrayList <String> grade = new ArrayList();
+	
 	
 		
 	public static void main (String [] args) {
+		
+		Textbox test = new Textbox(); // called to access the inputed values from the input box 
 		
 		JFrame homescreen = new JFrame ();
 		//Frame configuration
@@ -85,7 +93,10 @@ public class Textbox implements ActionListener {
 		
 		homescreen.setVisible(true);
 		
-	
+	//prints the arraylists that are holding the values inputted in the box 	
+	 System.out.print(test.fname);//get first name 
+         System.out.print(test.lname);//get last name 
+         System.out.print(test.grade);//get grade 
 	
 	
 	
@@ -95,10 +106,15 @@ public class Textbox implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		
 		String flabelName = txtName.getText(); //  first name 
 		String llabelName = txtName2.getText();// last name 
 		String glabelName = txtName3.getText();//grade level 
-		System.out.println(flabelName + "," +  llabelName + ":" + glabelName);
+		//System.out.println(flabelName + "," +  llabelName + ":" + glabelName);
+		fname.add(flabelName);//adds to firstname arraylist
+                lname.add(llabelName);//adds to lastname arraylist
+                grade.add(glabelName);//adds to grade arraylist 
+		
 	}
 }
     
