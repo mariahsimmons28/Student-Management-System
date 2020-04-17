@@ -1,11 +1,11 @@
-package studentmanager;
-
 import java.util.*;
 
 public class StudentManager {
 
     public static ArrayList<String> stuFN = new ArrayList();
     public static ArrayList<String> stuLN = new ArrayList();
+    public static ArrayList<String> students = new ArrayList();
+    
      public static void main(String[] args) {
         Menu();
 
@@ -24,9 +24,13 @@ public class StudentManager {
 
         if (choice == 1) {// if new student entry is chosen  
             studentInput();
+            Menu();
+          
+            
         }//if 
         else if (choice == 2) {//if view students is chosen
-            studentView(stuFN);
+            studentView(students);
+            Menu();
         } else {//if exit or any other number is chosen 
             exit();
         }
@@ -56,25 +60,34 @@ public class StudentManager {
             String grade = info.next();
             gradelevel.add(grade);
             System.out.println("------------------------------------------------");
-            //IDgenerator email = new IDgenerator();
+            IDgenerator gen1 = new IDgenerator();
+            gen1.User(fn, ln);
+            gen1.Password(6, fn, ln);
+            //String user = gen1.User(fn, ln);
+            String fullname = fn +" "+ ln; 
             stuFN = firstname;
+            stuLN = lastname;
+            students.add(fullname);
 
         }//for
 
         System.out.println("-----------------------------------");
+        System.out.println("\n");
         System.out.println("All of the students have been inputted into the system. Thank you.");
-        System.out.println("Student firstnames:" + firstname);
-        System.out.println("Student lastnames:" + lastname);
+        System.out.println("Student firstnames:" + stuFN);
+        System.out.println("Student lastnames:" + stuLN);
+        System.out.println("Student full names: "+ students);
         //System.out.println("Students First Names:"+ s1.fname);
 
     }
 
-    public static void studentView(ArrayList<String> stuFN) {
+    public static void studentView(ArrayList<String> students) {
         System.out.println("             Student Management System");
         System.out.println("------------------------------------------------");
         System.out.println("This is a Student Viewer. You are able to see all of \nyour students here.");
-        ArrayList<String> firstname = stuFN;
-        System.out.println("Students:" + firstname);
+        ArrayList<String> firstname = students;
+        stuFN = firstname;
+        System.out.println("Students:" + stuFN);
     }
 
     public static void exit() {
