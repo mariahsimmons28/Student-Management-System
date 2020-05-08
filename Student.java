@@ -1,57 +1,60 @@
-package adv_algor_final;
+/*
+ * Program creates a student instance using a inputted first name, last name, and grade
+ */
+package studentmanager;
+
 import java.util.*;
 
 public class Student {
-	private String fName;
-	private String lName;
-	private String gradeLevel;
-	private int studentID;
-	private String courses;
 
-	public Student() {
-		ArrayList<String> firstname = new ArrayList<String>();// Arraylist to hold first names 
-		ArrayList<String> lastname = new ArrayList<String>();//Arraylist to hold last names
-		ArrayList<String> gradel = new ArrayList<String>();//arraylist to hold gradelevel 
-		
-		Scanner in = new Scanner(System.in);
-		System.out.println("Welcome to the Student Management System!");
-		System.out.println("We will track your students' information for you as well as help you enter them into your class list.\n");
-		
-		System.out.println("Enter the student's first name: ");
-		this.fName = in.nextLine();
-		firstname.add(fName);
-		for (int i=0; i<firstname.size(); i++) 
-			//fName = firstname.get(i)+",";
-            System.out.print(firstname.get(i)+" ");
-		
-		
-		
-		System.out.println("Enter the student's last name: ");
-		   this.lName = in.nextLine();
-		   lastname.add(lName);
-		  String sname = ( fName +" "+ lName);
-		  System.out.println("Student name: " + sname);
-		  System.out.println("----------------------------------");
-		  System.out.println("Enter student class level: ");
-		  System.out.print("Freshman\nSophomore\nJunior\nSenior\n");
-		  System.out.println("----------------------------------");
-		  this.gradeLevel = in.nextLine();
-		  gradel.add(gradeLevel);
-		  System.out.println("Student name: " + sname + ","+gradeLevel);
-	}
-	
-	
-	/*public static void sName () {
-		  Scanner in = new Scanner(System.in);
-		  System.out.println("Database starting");
-		  System.out.println("Enter the student's first name: ");
-		  String fname = in.next();
-		  System.out.println("Enter the student's last name: ");
-		  String lname = in.next();
-		  String sname = ( fname +" "+ lname); 
-		  System.out.print("New Student Name :" + sname);
-		
-	} */
-	
-	
+  static  public String firstName; 
+    static public String lastName;
+   static  public String idNumber; 
+   static public String gradelevel;
+  
+    //ArrayLists for storage
+     ArrayList<String> fn = new ArrayList();
+     ArrayList<String> ln = new ArrayList();
+     ArrayList<String> gl = new ArrayList();
+     static ArrayList<String> fresh = new ArrayList();
+     static ArrayList<String> sopho = new ArrayList();
+     static ArrayList<String> jun = new ArrayList();
+     static ArrayList<String> sen = new ArrayList();
+     static ArrayList<String> grad = new ArrayList();
+     
+    public Student(String fname, String last, String grade ){ //creates a student and adds them to an arraylist
+        this.firstName = fname; 
+        this.lastName = last;  
+        this.gradelevel = grade; 
+        //adds items to arraylists 
+        fn.add(firstName);
+        ln.add(lastName);
+     
+    
+    }
+    
+    public void setFirstName(String first){
+        this.firstName = first; 
+    }
+  public String getFirstName(){
+      return this.firstName;
+  }
+  public void setLastName(String last){
+      this.lastName = last; 
+  }
+  public String getLastName(){
+      return this.lastName;
+  }
+   public void setGrade(String grade){
+      this.gradelevel = grade; 
+  }
+  public  static String getGrade(){
+      return gradelevel;
+  }
+  public static String getFullName(){
+      String fulln = firstName + " "+ lastName; 
+      return fulln; 
+  }
+
+  
 }
