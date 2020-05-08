@@ -1,15 +1,10 @@
 # Student-Management-System
-Java Program that allows a user to input various student information into the console and store the students information using a datbase connection. 
+Java Program that allows a user to input a student's first name, last name, and grade level into the console and store the students information. The program will generate a username, email, V#(student id), and passwords for the student when they are added to the system.
 
-
-  StudentManager.java: File that is used to run the current student input methods we have implemented. It will soon be connected to the other programs.
   
-  Student.java: program that will take in the students information and store them in variables. This will also be connected to the other programs.
+  Student.java: A program that will take in the students information and store them in variables, used to create their student information. This program is needed to run StudentSystem.java.
   
-  StudentSystem.java: original program code created to get brainstorm ideas figured out and implementing user input and storage.
+  StudentSystem.java: A program code created to run the management system that allows you to interact with the system by adding a new student, view existing students, and view the information of the last student inputted.  The student information is returned via the console.
   
-  Textbox.java: Program that is connected to Java Swing to display an input box to the user asking for input. Using this file to test Java Swing capabilities.
   
-  Boxproject.java: Program that will display a dialog that uses the java swing framework but looks better visually.
-  
-  IDgenerator.java: Program that will create a student email, student ID number, and password for the student that is inputted into the system. 
+  IDgenerator.java: Program that will create a student username, student email, student ID number, and passwords for the student that is inputted into the system. 
